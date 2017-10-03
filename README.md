@@ -5,6 +5,8 @@ GRKSignatureView
 [![Platform](https://img.shields.io/cocoapods/p/GRKSignatureView.svg?style=flat)](http://cocoadocs.org/docsets/GRKSignatureView)
 [![License](https://img.shields.io/cocoapods/l/GRKSignatureView.svg?style=flat)](http://cocoadocs.org/docsets/GRKSignatureView)
 
+![Signature](ReadmeAssets/title.png)
+
 A UIView subclass used to capture a high quality rendition of a user's signature.
 
 ### Installing
