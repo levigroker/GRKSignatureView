@@ -1,4 +1,5 @@
 language: objective-c
-
-# Use when you don't have third party dependencies
-script: xctool -project GRKSignatureViewTestApp/GRKSignatureViewTestApp.xcworkspace -scheme GRKSignatureViewTestApp -sdk iphonesimulator build test
+osx_image: xcode9
+xcode_sdk: iphonesimulator11.0
+xcode_workspace: GRKSignatureViewTestApp/GRKSignatureViewTestApp.xcworkspace
+xcode_scheme: GRKSignatureViewTestApp
