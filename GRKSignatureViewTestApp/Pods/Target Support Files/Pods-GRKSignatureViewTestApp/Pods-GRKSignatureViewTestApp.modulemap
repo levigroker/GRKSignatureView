@@ -1,0 +1,6 @@
+framework module Pods_GRKSignatureViewTestApp {
+  umbrella header "Pods-GRKSignatureViewTestApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

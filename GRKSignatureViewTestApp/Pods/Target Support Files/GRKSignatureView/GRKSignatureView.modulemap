@@ -1,0 +1,6 @@
+framework module GRKSignatureView {
+  umbrella header "GRKSignatureView-umbrella.h"
+
+  export *
+  module * { export * }
+}
