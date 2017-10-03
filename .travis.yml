@@ -1,8 +1,4 @@
 language: objective-c
 
 # Use when you don't have third party dependencies
-script: xctool -project Pod/Pod.xcodeproj -scheme Tests -sdk iphonesimulator build test
-
-# Use when you have third party dependencies (CocoaPods generates a workspace)
-# podfile: Pod/Podfile
-# script: xctool -workspace Pod/Pod.xcworkspace -scheme Tests -sdk iphonesimulator build test
+script: xctool -project GRKSignatureViewTestApp/GRKSignatureViewTestApp.xcworkspace -scheme GRKSignatureViewTestApp -sdk iphonesimulator build test
