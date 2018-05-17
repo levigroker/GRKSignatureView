@@ -66,10 +66,18 @@ extern CGFloat const kGRKSignatureDefaultStrokeWidthMax;
 
 /**
  Captures the current stroke as an image.
-
+ 
  @return A UIImage containing the contents of the view, with an alpha background.
  */
 - (UIImage *)signatureImage;
+
+/**
+ Captures the current stroke, with given color, as an image.
+ 
+ @param color The color of the stroke to capture in the image, regardless of the current `strokeColor`.
+ @return A UIImage containing the contents of the view, with an alpha background.
+ */
+- (UIImage *)signatureImageWithColor:(UIColor *)color;
 
 @end
 
