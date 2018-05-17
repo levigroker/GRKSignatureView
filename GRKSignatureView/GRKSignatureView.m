@@ -288,7 +288,7 @@ static GRKSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 - (void)setStrokeColor:(UIColor *)strokeColor
 {
 	_strokeColor = strokeColor;
-	[self updateStrokeColor];
+	[self updateStrokeColor:strokeColor];
 }
 
 #pragma mark - Implementation
@@ -304,7 +304,20 @@ static GRKSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 
 - (UIImage *)signatureImage
 {
-	return (self.hasSignature) ? [self snapshot] : nil;
+	return self.hasSignature ? [self snapshot] : nil;
+}
+
+- (UIImage *)signatureImageWithColor:(UIColor *)color
+{
+	UIImage *retVal = nil;
+	
+	if (self.hasSignature) {
+		[self updateStrokeColor:color];
+		retVal = [self snapshot];
+		[self updateStrokeColor:self.strokeColor];
+	}
+	
+	return retVal;
 }
 
 #pragma mark - Actions
@@ -509,7 +522,7 @@ static GRKSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 	
 	effect = [[GLKBaseEffect alloc] init];
 	
-	[self updateStrokeColor];
+	[self updateStrokeColor:self.strokeColor];
 	
 	glDisable(GL_DEPTH_TEST);
 	
@@ -558,13 +571,13 @@ static GRKSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 	effect = nil;
 }
 
-- (void)updateStrokeColor
+- (void)updateStrokeColor:(UIColor *)color
 {
 	CGFloat red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0, white = 0.0;
-	if (effect && self.strokeColor && [self.strokeColor getRed:&red green:&green blue:&blue alpha:&alpha]) {
+	if (effect && color && [color getRed:&red green:&green blue:&blue alpha:&alpha]) {
 		effect.constantColor = GLKVector4Make(red, green, blue, alpha);
 	}
-	else if (effect && self.strokeColor && [self.strokeColor getWhite:&white alpha:&alpha]) {
+	else if (effect && color && [color getWhite:&white alpha:&alpha]) {
 		effect.constantColor = GLKVector4Make(white, white, white, alpha);
 	}
 	else {

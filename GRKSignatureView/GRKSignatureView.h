@@ -1,7 +1,7 @@
 //
 //  GRKSignatureView.h
 //
-//  Copyright (c) 2017 Levi Brown <mailto:levigroker@gmail.com> This work is
+//  Copyright (c) 2017-2018 Levi Brown <mailto:levigroker@gmail.com> This work is
 //  licensed under the Creative Commons Attribution 4.0 International License. To
 //  view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
 //
