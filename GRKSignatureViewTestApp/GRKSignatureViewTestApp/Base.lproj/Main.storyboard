@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,11 +23,30 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18A-Pb-lwd">
+                                <rect key="frame" x="56" y="110" width="262.5" height="419"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4UG-rT-qlV">
+                                        <rect key="frame" x="8" y="8" width="246.5" height="403"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.79699074074074072" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="4UG-rT-qlV" firstAttribute="top" secondItem="18A-Pb-lwd" secondAttribute="top" constant="8" id="Ldm-9t-C2Q"/>
+                                    <constraint firstItem="4UG-rT-qlV" firstAttribute="leading" secondItem="18A-Pb-lwd" secondAttribute="leading" constant="8" id="OaJ-kH-n4F"/>
+                                    <constraint firstAttribute="trailing" secondItem="4UG-rT-qlV" secondAttribute="trailing" constant="8" id="lNE-Aa-lHT"/>
+                                    <constraint firstAttribute="bottom" secondItem="4UG-rT-qlV" secondAttribute="bottom" constant="8" id="ved-xU-3xs"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mWO-Np-uoe" appends="YES" id="IyF-qa-Nb2"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLy-s3-9gb">
                                 <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRW-jL-az0">
-                                        <rect key="frame" x="319" y="9" width="36" height="30"/>
+                                        <rect key="frame" x="329" y="9" width="36" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYd-1C-jKS"/>
@@ -43,38 +64,59 @@
                                             <action selector="longPressValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eMk-kD-ZJG"/>
                                         </connections>
                                     </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPG-Ml-oB8">
+                                        <rect key="frame" x="256" y="9" width="65" height="30"/>
+                                        <state key="normal" title="Snapshot"/>
+                                        <connections>
+                                            <action selector="snapshotAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXR-eO-nTu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.94722443200923778" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="dRW-jL-az0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SLy-s3-9gb" secondAttribute="leading" constant="20" symbolic="YES" id="6Xc-Me-Fov"/>
                                     <constraint firstItem="X6S-3g-Rle" firstAttribute="top" secondItem="SLy-s3-9gb" secondAttribute="top" constant="8" id="HRG-kM-ApW"/>
                                     <constraint firstItem="dRW-jL-az0" firstAttribute="centerY" secondItem="X6S-3g-Rle" secondAttribute="centerY" id="IqP-tb-dKQ"/>
+                                    <constraint firstItem="ZPG-Ml-oB8" firstAttribute="baseline" secondItem="dRW-jL-az0" secondAttribute="baseline" id="Jwg-sa-2Co"/>
+                                    <constraint firstItem="dRW-jL-az0" firstAttribute="leading" secondItem="ZPG-Ml-oB8" secondAttribute="trailing" constant="8" symbolic="YES" id="OQl-SZ-Wf0"/>
                                     <constraint firstItem="V9X-pG-YqO" firstAttribute="leading" secondItem="SLy-s3-9gb" secondAttribute="leading" constant="20" symbolic="YES" id="Oer-2B-ULJ"/>
                                     <constraint firstItem="V9X-pG-YqO" firstAttribute="centerY" secondItem="X6S-3g-Rle" secondAttribute="centerY" id="QNH-mm-HTq"/>
+                                    <constraint firstItem="ZPG-Ml-oB8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X6S-3g-Rle" secondAttribute="trailing" priority="500" constant="8" id="QmK-GF-Lm4"/>
                                     <constraint firstItem="X6S-3g-Rle" firstAttribute="centerY" secondItem="SLy-s3-9gb" secondAttribute="centerY" id="TNp-XW-cof"/>
                                     <constraint firstItem="X6S-3g-Rle" firstAttribute="leading" secondItem="V9X-pG-YqO" secondAttribute="trailing" constant="8" id="UCN-oi-get"/>
-                                    <constraint firstAttribute="trailing" secondItem="dRW-jL-az0" secondAttribute="trailing" constant="20" symbolic="YES" id="wQa-Uk-05T"/>
+                                    <constraint firstAttribute="trailing" secondItem="dRW-jL-az0" secondAttribute="trailing" constant="10" id="wQa-Uk-05T"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="18A-Pb-lwd" firstAttribute="centerX" secondItem="yQa-1S-92H" secondAttribute="centerX" id="2ln-6V-T9K"/>
                             <constraint firstItem="yQa-1S-92H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AH2-Gr-F13"/>
                             <constraint firstItem="SLy-s3-9gb" firstAttribute="top" secondItem="yQa-1S-92H" secondAttribute="bottom" id="BYU-oe-A1q"/>
                             <constraint firstItem="SLy-s3-9gb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="F3Y-sS-yjh"/>
                             <constraint firstItem="SLy-s3-9gb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KRg-iw-7dW"/>
                             <constraint firstItem="SLy-s3-9gb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lgh-R3-esI"/>
                             <constraint firstItem="yQa-1S-92H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MGv-yM-WYZ"/>
+                            <constraint firstItem="18A-Pb-lwd" firstAttribute="centerY" secondItem="yQa-1S-92H" secondAttribute="centerY" id="SSS-cB-Pmo"/>
+                            <constraint firstItem="18A-Pb-lwd" firstAttribute="width" secondItem="yQa-1S-92H" secondAttribute="width" multiplier="0.7" id="UoP-Tk-PPg"/>
                             <constraint firstItem="yQa-1S-92H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nBv-tA-xJ7"/>
+                            <constraint firstItem="18A-Pb-lwd" firstAttribute="height" secondItem="yQa-1S-92H" secondAttribute="height" multiplier="0.7" id="tHL-p2-Wgj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageContainerView" destination="18A-Pb-lwd" id="sff-0e-DvC"/>
+                        <outlet property="imageView" destination="4UG-rT-qlV" id="R20-Wn-1Ky"/>
                         <outlet property="longPressSwitch" destination="X6S-3g-Rle" id="V3t-5e-FEY"/>
                         <outlet property="signatureView" destination="yQa-1S-92H" id="vpj-Tm-RgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mWO-Np-uoe">
+                    <connections>
+                        <action selector="imageTapGesture:" destination="BYZ-38-t0r" id="upw-Xj-QXV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
