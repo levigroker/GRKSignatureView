@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
 Allows touch input of a signature or other handwriting, with smoothed lines and thickness,
 and capturing of same as an image.
     DESC
-  s.version          = "1.0"
+  s.version          = "1.1"
   s.homepage         = "https://github.com/levigroker/GRKSignatureView"
   s.license          = 'Creative Commons Attribution 4.0 International License'
   s.author           = { "Levi Brown" => "levigroker@gmail.com" }
